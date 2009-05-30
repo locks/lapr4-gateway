@@ -1,0 +1,25 @@
+imobiliaria
+	imovel
+		tipo (T4 etc)
+			quinta
+			moradia
+			apartamento
+				tipologia
+					T0
+					T1
+					T2+1
+					T3
+					T4
+			loja
+			terreno
+		área (m^2)
+		descrição
+		localidade
+		preço
+		dono
+			nome
+			contacto
+		vendedores
+			vendedor
+				nome
+				contacto
