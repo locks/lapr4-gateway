@@ -62,6 +62,10 @@ public class Repositorio {
             novo : null;
     }
 
+    public boolean existeFicheiro(File ficheiro) {
+        return repositorio.contains( ficheiro );
+    }
+
     public void actualizar() {
         mails = (mails.equals( new File(dir).listFiles()) )?
             null : null;
