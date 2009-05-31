@@ -7,10 +7,12 @@ public class Repositorio {
 
     private String dir = "./";
     private File[] mails = null;
+    private Vector<File> repositorio = new Vector<File>();
 
     public Repositorio() {
         setDirectory();
         mails = new File(dir).listFiles();
+        setRepositorio();
     }
 
     public Repositorio(String dir) {
@@ -31,6 +33,20 @@ public class Repositorio {
         }
     }
 
+    public void setRepositorio() {
+        for(File ficheiro : new File(dir).listFiles())
+            repositorio.add(ficheiro);
+    }
+
+    public Vector<File> novoRepositorio() {
+        Vector<File> novo = null;
+        
+        for(File ficheiro : new File(dir).listFiles())
+            repositorio.add(ficheiro);
+
+        return novo;
+    }
+    
     public Vector<String> toStringArray() {
         Vector<String> lista = new Vector<String>();
 
@@ -38,6 +54,25 @@ public class Repositorio {
             lista.add( ficheiro.getName() );
 
         return lista;
+    }
+
+    public Vector<File> getElementosNovos() {
+        Vector<File> novo = novoRepositorio();
+        return (novo.removeAll(repositorio)) ?
+            novo : null;
+    }
+
+    public void actualizar() {
+        mails = (mails.equals( new File(dir).listFiles()) )?
+            null : null;
+    }
+
+    public void novos() {
+
+        File[] novos = new File(dir).listFiles();
+
+//        for( File ficheiro : novos )
+//            if ( mails.)
     }
 
     @Override
@@ -48,6 +83,10 @@ public class Repositorio {
             fileList += ficheiro.getName() + "\n";
 
         return fileList;
+    }
+
+    public String mmString() {
+        return repositorio.toString();
     }
 
 }

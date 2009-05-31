@@ -22,5 +22,9 @@ public class Gateway {
         return repList;
     }
 
+    public String mmString() {
+        return reps.toString();
+    }
+
 }
 
